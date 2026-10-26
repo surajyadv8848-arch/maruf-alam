@@ -1,0 +1,6 @@
+{
+  "name": "HemoMatch - Blood Typing & Compatibility Examiner",
+  "description": "Interactive clinical platform and virtual simulation ground for ABO/Rh slide agglutination blood typing and donor/recipient transfusion compatibility examination. Made by Maruf.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

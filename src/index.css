@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Space Mono', monospace;
+}
+
+:root {
+  --bg-main: #0a0d1a;
+  --text-main: #f8fafc;
+  --color-brand-indigo: #6366f1;
+  --color-brand-violet: #8b5cf6;
+  --color-brand-amber: #f59e0b;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Deep Royal Indigo & Violet Diagnostic Grid Backgrounds */
+.clinical-grid-dark {
+  background-color: #080b16;
+  background-image: 
+    radial-gradient(ellipse 75% 50% at 50% 0%, rgba(99, 102, 241, 0.18) 0%, transparent 70%),
+    radial-gradient(circle at 100% 100%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+    linear-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+}
+
+.clinical-grid-light {
+  background-color: #f7f9fd;
+  background-image: 
+    radial-gradient(ellipse 75% 50% at 50% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 70%),
+    radial-gradient(circle at 100% 100%, rgba(139, 92, 246, 0.05) 0%, transparent 50%),
+    linear-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+}
+
+/* Clinical Ceramic & Glass Slide Styles (Royal Indigo & Violet) */
+.ceramic-slide {
+  background: radial-gradient(circle at 50% 15%, #131930 0%, #0b0f20 100%);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  box-shadow: 0 25px 60px -15px rgba(5, 8, 20, 0.95), 0 0 0 1px rgba(99, 102, 241, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+.ceramic-slide-light {
+  background: #ffffff;
+  border: 2px solid #e0e7ff;
+  box-shadow: 0 16px 40px -10px rgba(99, 102, 241, 0.12), inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+/* Testing Well Glass Recess (Deep Obsidian with subtle Indigo Tint) */
+.testing-well-dark {
+  background: radial-gradient(circle at 35% 35%, #141b36 0%, #080b18 90%);
+  box-shadow: inset 0 4px 14px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(139, 92, 246, 0.25);
+}
+
+.testing-well-light {
+  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #eef2ff 90%);
+  box-shadow: inset 0 3px 10px rgba(99, 102, 241, 0.2), 0 0 0 1px #c7d2fe;
+}
+
+/* Agglutination Clumps Pulse Animation */
+@keyframes bio-clump-micro {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 3px rgba(239, 68, 68, 0.6)); }
+  50% { transform: scale(1.06); filter: drop-shadow(0 0 7px rgba(239, 68, 68, 0.9)); }
+}
+
+.animate-clump {
+  animation: bio-clump-micro 2s ease-in-out infinite;
+}
+
+/* Animation: Error shake */
+@keyframes bio-shake {
+  0%, 100% { transform: translateX(0); }
+  15% { transform: translateX(-8px) rotate(-1deg); }
+  30% { transform: translateX(8px) rotate(1deg); }
+  45% { transform: translateX(-6px); }
+  60% { transform: translateX(6px); }
+  75% { transform: translateX(-3px); }
+  90% { transform: translateX(3px); }
+}
+
+.animate-bio-shake {
+  animation: bio-shake 0.55s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+/* Animation: Celebration pop */
+@keyframes bio-celebrate {
+  0% { transform: scale(0.92); opacity: 0; }
+  50% { transform: scale(1.04); }
+  70% { transform: scale(0.98); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-bio-celebrate {
+  animation: bio-celebrate 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+/* Animation: Swipe in front from bottom */
+@keyframes bio-slide-up {
+  0% { transform: translateY(100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.animate-bio-slide-up {
+  animation: bio-slide-up 0.38s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Animation: Swipe down to hide */
+@keyframes bio-slide-down {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+.animate-bio-slide-down {
+  animation: bio-slide-down 0.28s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+/* Opening splash animations */
+@keyframes bio-drop-pulse {
+  0% { transform: scale(0.85); box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.7); }
+  50% { transform: scale(1.08); box-shadow: 0 0 0 24px rgba(139, 92, 246, 0); }
+  100% { transform: scale(0.85); box-shadow: 0 0 0 0 rgba(139, 92, 246, 0); }
+}
+
+.animate-bio-drop-pulse {
+  animation: bio-drop-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes bio-fade-in-up {
+  0% { opacity: 0; transform: translateY(10px) scale(0.99); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.animate-bio-fade-in-up {
+  animation: bio-fade-in-up 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes bio-spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-bio-spin-slow {
+  animation: bio-spin-slow 7s linear infinite;
+}
